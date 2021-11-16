@@ -15,3 +15,11 @@ node {
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
   }
 }
+node {
+  stage ('Compile') {
+    git url: 'https://github.com/RThangaraju123/simple-java-maven-app.git'
+    withMaven {
+      sh "java -cp target/classes com.mycompany.app.App"
+    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+  }
+}
