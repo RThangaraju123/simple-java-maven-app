@@ -16,7 +16,7 @@ node {
   }
 }
 node {
-  stage ('Compile') {
+  stage ('ExecuteClassFile') {
     git url: 'https://github.com/RThangaraju123/simple-java-maven-app.git'
     withMaven {
       sh "java -cp target/classes com.mycompany.app.App"
